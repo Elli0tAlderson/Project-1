@@ -6,9 +6,6 @@
 }
 
 :root {
-  --text-light: #64748b;
-  --background: #ffffff;
-  --background-muted: #f8fafc;
   --transition: all 0.3s ease;
 }
 
@@ -244,7 +241,6 @@ body {
 }
 
 .content > p {
-  color: var(--text-light);
   margin-bottom: 2rem;
   color: #fff;
 }
@@ -419,6 +415,10 @@ body {
 
   .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .content > p{
+    font-size: 0.8rem;
   }
 
   .slide-content h1 {
