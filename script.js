@@ -7,7 +7,7 @@ navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-ssdocument.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
