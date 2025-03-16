@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: DM Sans;
+}
+
+:root {
+  --text-light: #64748b;
+  --background: #ffffff;
+  --background-muted: #f8fafc;
+  --transition: all 0.3s ease;
+}
+
+body {
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(29, 29, 29);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid rgb(201, 29, 29);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.nav-brand {
+  font-size: 1.75rem;
+  color: rgb(201, 29, 29);
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: rgb(201, 29, 29);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* Hero Section Carousel */
+.hero {
+  min-height: 100vh;
+  padding-top: 4rem;
+}
+
+.carousel {
+  position: relative;
+  height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.carousel-container {
+  height: 100%;
+  transition: var(--transition);
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.slide-content h1 {
+  font-family: "Raleway";
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 5px;
+}
+
+.slide-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-btn.prev {
+  left: 1rem;
+  font-size: 1.5rem;
+}
+
+.carousel-btn.next {
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+#btn-1 {
+  font-size: 16px;
+  position: relative;
+  margin: 0px auto;
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  border: none;
+  background: #fffafa00;
+  transition: all 0.1s linear;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#btn-1:active {
+  transform: scale(0.95);
+}
+
+#btn-1 span {
+  color: #ffffff;
+}
+
+#btn-1 .border {
+  position: absolute;
+  border: 0.15rem solid #fff;
+  transition: all 0.2s linear;
+  top: 50%;
+  left: 50%;
+  width: 9rem;
+  height: 3rem;
+  transform: translate(-50%, -50%);
+}
+
+#btn-1:hover .border {
+  display: block;
+  width: 9.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  border: 0.15rem solid rgb(201, 29, 29);
+}
+
+/* Video Section */
+
+.video-section {
+  padding: 6rem 0;
+  background-color: rgb(34, 32, 32);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  padding-top: 56.5%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.content h2 {
+  font-size: 2.25rem;
+  font-family: "Raleway";
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.content > p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* faq Section */
+.faq-section {
+  padding: 6rem 0;
+  background-color: rgb(34, 32, 32);
+  color: #fff;
+}
+
+.faq-section h2 {
+  font-family: "Raleway";
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.accordion {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #fff;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.accordion-header .icon {
+  transition: var(--transition);
+  color: #fff;
+}
+
+.accordion-item.active .accordion-header .icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  padding: 0 1.5rem;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+  padding-bottom: 1.5rem;
+}
+
+/* footer */
+
+.footer {
+  background-color: rgb(34, 32, 32);
+  border-top: 0.05rem solid rgb(201, 29, 29);
+  color: white;
+  padding: 2rem 2rem;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-section h3 {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-section ul li a:hover {
+  color: rgb(201, 29, 29);
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    right: 0;
+    background: rgb(29, 29, 29);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateY(-100%);
+    transition: var(--transition);
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 10;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: rgb(201, 29, 29);
+    transition: var(--transition);
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .carousel-btn.prev {
+    display: none;
+  }
+
+  .carousel-btn.next {
+    display: none;
+  }
+
+  .content{
+    margin: 0rem 2rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-content h1 {
+    font-size: 2rem;
+  }
+
+  .slide-content p {
+    font-size: 1rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  #btn-1{
+    padding: 1rem;
+  }
+
+  #btn-1 .border {
+    width: 7rem;
+    height: 2.5rem;
+  }
+
+  #btn-1:hover .border {
+    width: 7.5rem;
+    height: 3rem;
+  }
+
+  .faq-section{
+    padding: 0 0 4rem 0;
+  }
+
+  .faq-section h2{
+    font-size: 2rem;
+  }
+
+  .subtitle{
+    font-size: 0.8rem;
+  }
+
+  .footer-content {
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-content {
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer {
+    padding: 2rem 2rem; 
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem; 
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .footer-section ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1rem;
+    font-size: 0.9rem; 
+  }
+}
